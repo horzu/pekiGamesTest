@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js"></script>
+    <title>Ders İçerikleri</title>
+  </head>
+  <body class="container">
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <table class="table table-bordered">
+          <thead class="accordion-header" id="panelsStayOpen-headingOne">
+            <tr>
+              <td rowspan="2">
+                Tema: 1 <br />
+                Güneş, Dünya ve Ay
+              </td>
+              <td>9 Eylül 2020</td>
+              <td>Toplam <br />300</td>
+              <td>Çözülen <br />282</td>
+              <td>Doğru <br />235</td>
+              <td>Yanlış <br />47</td>
+              <td colspan="4">
+                <div>Başarı Oranı 73%</div>
+                <div>Kazanım 86%</div>
+              </td>
+              <td>
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseOne"
+                  aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseOne"
+                ></button>
+              </td>
+            </tr>
+          </thead>
+          <!-- Second Table starts  -->
+
+          <tbody id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show accordion-body" aria-labelledby="panelsStayOpen-headingOne">
+            <tr class="bg-primary">
+              <td scope="row" colspan="4">Konu</td>
+              <td>Toplam</td>
+              <td>Doğru</td>
+              <td>Yanlış</td>
+              <td>Başarı</td>
+              <td colspan="3">Kazanım</td>
+            </tr>
+            <tr>
+              <th scope="row" colspan="4">Güneşin Yapısı ve Özellikleri</th>
+              <!-- Third Table Starts  -->
+
+              <td>75</td>
+              <td>61</td>
+              <td>14</td>
+              <td>34%</td>
+              <td colspan="3">61%</td>
+            </tr>
+            <tr>
+              <th scope="row" colspan="4">Ayın Yapısı ve Özellikleri</th>
+              <td>75</td>
+              <td>61</td>
+              <td>14</td>
+              <td>34%</td>
+              <td colspan="3">61%</td>
+            </tr>
+            <tr>
+              <th scope="row" colspan="4">Ayın Haraketleri ve Evreleri</th>
+              <td>75</td>
+              <td>61</td>
+              <td>14</td>
+              <td>34%</td>
+              <td colspan="3">61%</td>
+            </tr>
+            <tr>
+              <th scope="row" colspan="4">Güneş, Dünya ve Ay</th>
+              <td>75</td>
+              <td>61</td>
+              <td>14</td>
+              <td>34%</td>
+              <td colspan="3">61%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
