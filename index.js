@@ -19,17 +19,17 @@ $(function () {
 
 function allTables(data) {
   var arr = data.content;
-  $.each(arr, function (key4, value4) {
+  $.each(arr, function (key, value) {
     $("#container").append(
       "<tr>" +
         "<td>" +
         "Tema:" +
-        value4.lesson_cat_id +
+        value.lesson_cat_id +
         "<br />" +
-        value4.lesson_cat_title +
+        value.lesson_cat_title +
         "</td>" +
         "<td>" +
-        value4.lesson_cat_title +
+        value.lesson_start_date +
         "</td>" +
         "<td>" +
         "Toplam <br />" +
@@ -37,83 +37,79 @@ function allTables(data) {
         "</td>" +
         "<td>" +
         "Çözülen <br />" +
-        value4.lesson_solved +
+        value.lesson_solved +
         "</td>" +
         "<td>" +
         "Doğru <br />" +
-        value4.lesson_correct +
+        value.lesson_correct +
         "</td>" +
         "<td>" +
         "Yanlış <br />" +
-        value4.lesson_wrong +
+        value.lesson_wrong +
         "</td>" +
         "<td>" +
         "<div>Başarı Oranı " +
-        value4.lesson_success +
+        value.lesson_success +
         "%</div>" +
         "<div>Kazanım " +
-        value4.lesson_earnings +
+        value.lesson_earnings +
         "%</div>" +
         "</td>" +
         "<td>" +
         "<button>Button</button>" +
         "</td>" +
+        "</tr>" +
+        "<tr class='bg-primary'>" +
+        "<td>Konu</td>" +
+        "<td>Toplam</td>" +
+        "<td>Doğru</td>" +
+        "<td>Yanlış</td>" +
+        "<td>Başarı</td>" +
+        "<td>Kazanım</td>" +
         "</tr>"
     );
-    $.each(arr, function (key, value) {
+    $.each(value.lesson_sub, function (key2, value2) {
       $("#container").append(
-        "<tr class='bg-primary'>" +
-          "<td>Konu</td>" +
-          "<td>Toplam</td>" +
-          "<td>Doğru</td>" +
-          "<td>Yanlış</td>" +
-          "<td>Başarı</td>" +
-          "<td>Kazanım</td>" +
-          "</tr>"
+        "<tr><th><strong>" +
+          value2.lesson_cat_title +
+          "</strong></th>" +
+          "<td>" +
+          "N/A" +
+          "</td>" +
+          "<td>" +
+          value2.lesson_correct +
+          "</td>" +
+          "<td>" +
+          value2.lesson_wrong +
+          "</td>" +
+          "<td>" +
+          value2.lesson_success +
+          "</td>" +
+          "<td>" +
+          value2.lesson_earnings +
+          "</td></tr>"
       );
-      $.each(value.lesson_sub, function (key2, value2) {
+      $.each(value2.lessons, function (key3, value3) {
         $("#container").append(
-          "<tr><th><strong>" +
-            value2.lesson_cat_title +
-            "</strong></th>" +
+          "<tr><th>" +
+            value3.lesson_title +
+            "</th>" +
             "<td>" +
-            "N/A" +
+            value3.lesson_learning_question +
             "</td>" +
             "<td>" +
-            value2.lesson_correct +
+            value3.lesson_correct +
             "</td>" +
             "<td>" +
-            value2.lesson_wrong +
+            value3.lesson_wrong +
             "</td>" +
             "<td>" +
-            value2.lesson_success +
+            value3.lesson_success +
             "</td>" +
             "<td>" +
-            value2.lesson_earnings +
+            value3.lesson_earnings +
             "</td></tr>"
         );
-        $.each(value2.lessons, function (key3, value3) {
-          $("#container").append(
-            "<tr><th>" +
-              value3.lesson_title +
-              "</th>" +
-              "<td>" +
-              value3.lesson_learning_question +
-              "</td>" +
-              "<td>" +
-              value3.lesson_correct +
-              "</td>" +
-              "<td>" +
-              value3.lesson_wrong +
-              "</td>" +
-              "<td>" +
-              value3.lesson_success +
-              "</td>" +
-              "<td>" +
-              value3.lesson_earnings +
-              "</td></tr>"
-          );
-        });
       });
     });
   });
