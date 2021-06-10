@@ -1,16 +1,21 @@
-td {
-  width: auto;
+body {
+  background-color: whitesmoke;
 }
 
-tr.baslik {
-  display: table-row;
-  cursor: pointer;
+.anatema {
+  background-color: white;
+
+  border: 1px solid black;
+  border-radius: 1%;
+  margin-bottom: 10px;
 }
 
-tr#tema {
-  display: table-row;
+.anatema {
+  border-left: transparent;
+  border-top: transparent;
+  border-bottom: transparent;
 }
 
-tr.altbaslik {
-  display: none;
+.theader {
+  background-color: royalblue;
 }

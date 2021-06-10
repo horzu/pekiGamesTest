@@ -20,7 +20,8 @@ $(function () {
 function allTables(data) {
   var arr = data.content;
   $.each(arr, function (key, value) {
-    $("#container").append(
+    $("#container").append("<div class='anatema container' id='tema" + key + "'>" + "</div>");
+    $("#tema" + key).append(
       "<tr id='tema'>" +
         "<td>" +
         "Tema:" +
@@ -56,10 +57,10 @@ function allTables(data) {
         "%</div>" +
         "</td>" +
         "<td>" +
-        '<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Button</button>' +
+        '<button class="btn btn-primary sign"></button>' +
         "</td>" +
         "</tr>" +
-        '<tr class="bg-primary theader">' +
+        '<tr class="theader">' +
         "<td>Konu</td>" +
         "<td>Toplam</td>" +
         "<td>Doğru</td>" +
@@ -69,13 +70,13 @@ function allTables(data) {
         "</tr>"
     );
     $.each(value.lesson_sub, function (key2, value2) {
-      $("#container").append(
-        "<tr class='baslik'><th><strong>" +
+      $("#tema" + key).append(
+        "<tr class='baslik'>" +
+          "<th class='sign'>" +
           value2.lesson_cat_title +
-          "</strong></th>" +
-          "<td>" +
+          "<th>" +
           "N/A" +
-          "</td>" +
+          "</th>" +
           "<td>" +
           value2.lesson_correct +
           "</td>" +
@@ -90,7 +91,7 @@ function allTables(data) {
           "</td></tr>"
       );
       $.each(value2.lessons, function (key3, value3) {
-        $("#container").append(
+        $("#tema" + key).append(
           "<tr class='altbaslik'><td>" +
             value3.lesson_title +
             "</td>" +
@@ -114,14 +115,3 @@ function allTables(data) {
     });
   });
 }
-
-$("tr.baslik").click(function () {
-  /* get all the subsequent 'tr' elements until the next 'tr.header',
-     set the 'display' property to 'none' (if they're visible), to 'table-row'
-     if they're not: */
-  $(this)
-    .nextUntil("tr.baslik")
-    .css("display", function (i, v) {
-      return this.style.display === "table-row" ? "none" : "table-row";
-    });
-});
