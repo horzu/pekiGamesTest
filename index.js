@@ -57,22 +57,25 @@ function allTables(data) {
         "%</div>" +
         "</td>" +
         "<td>" +
-        '<button class="btn btn-primary sign"></button>' +
+        '<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#temaaltı' +
+        key +
+        '" aria-expanded="false" aria-controls="temaaltı0"></button>' +
         "</td>" +
-        "</tr>" +
-        '<tr class="theader">' +
-        "<td>Konu</td>" +
-        "<td>Toplam</td>" +
-        "<td>Doğru</td>" +
-        "<td>Yanlış</td>" +
-        "<td>Başarı</td>" +
-        "<td>Kazanım</td>" +
         "</tr>"
     );
+    $("#tema" + key).append("<div class='collapse' id='temaaltı" + key + "'>" + "</div>");
+    $("#temaaltı" + key).append(
+      '<tr class="theader">' + "<td>Konu</td>" + "<td>Toplam</td>" + "<td>Doğru</td>" + "<td>Yanlış</td>" + "<td>Başarı</td>" + "<td>Kazanım</td>" + "</tr>"
+    );
     $.each(value.lesson_sub, function (key2, value2) {
-      $("#tema" + key).append(
+      $("#temaaltı" + key).append(
         "<tr class='baslik'>" +
-          "<th class='sign'>" +
+          "<th>" +
+          '<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#entemaaltı' +
+          value2.lesson_sub_cat_id +
+          '" aria-expanded="false" aria-controls="entemaaltı' +
+          value2.lesson_sub_cat_id +
+          '"></button>' +
           value2.lesson_cat_title +
           "<th>" +
           "N/A" +
@@ -90,8 +93,9 @@ function allTables(data) {
           value2.lesson_earnings +
           "</td></tr>"
       );
+      $("#temaaltı" + key).append("<div class='collapse' id='entemaaltı" + value2.lesson_sub_cat_id + "'>" + "</div>"); // neden 2 değil daha fazla içerik ekliyor!!!!!
       $.each(value2.lessons, function (key3, value3) {
-        $("#tema" + key).append(
+        $("#entemaaltı" + value2.lesson_sub_cat_id).append(
           "<tr class='altbaslik'><td>" +
             value3.lesson_title +
             "</td>" +

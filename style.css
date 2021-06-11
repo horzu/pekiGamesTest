@@ -17,5 +17,5 @@ body {
 }
 
 .theader {
-  background-color: royalblue;
+  background-color: royalblue !important;
 }
