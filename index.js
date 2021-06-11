@@ -63,10 +63,18 @@ function allTables(data) {
         "</td>" +
         "</tr>"
     );
-    $("#tema" + key).append("<div class='collapse' id='temaaltı" + key + "'>" + "</div>");
+    $("#tema" + key).append("<table class='collapse table table-bordered align-middle table-responsive' id='temaaltı" + key + "'>" + "</table>");
     $("#temaaltı" + key).append(
-      '<tr class="theader">' + "<td>Konu</td>" + "<td>Toplam</td>" + "<td>Doğru</td>" + "<td>Yanlış</td>" + "<td>Başarı</td>" + "<td>Kazanım</td>" + "</tr>"
+      '<thead><tr class="theader">' +
+        "<td>Konu</td>" +
+        "<td>Toplam</td>" +
+        "<td>Doğru</td>" +
+        "<td>Yanlış</td>" +
+        "<td>Başarı</td>" +
+        "<td>Kazanım</td>" +
+        "</tr></thead>"
     );
+    $("#temaaltı" + key).append("<tbody>");
     $.each(value.lesson_sub, function (key2, value2) {
       $("#temaaltı" + key).append(
         "<tr class='baslik'>" +
@@ -75,7 +83,7 @@ function allTables(data) {
           value2.lesson_sub_cat_id +
           '" aria-expanded="false" aria-controls="entemaaltı' +
           value2.lesson_sub_cat_id +
-          '"></button>' +
+          '">+</button>' +
           value2.lesson_cat_title +
           "<th>" +
           "N/A" +
@@ -93,10 +101,12 @@ function allTables(data) {
           value2.lesson_earnings +
           "</td></tr>"
       );
-      $("#temaaltı" + key).append("<div class='collapse' id='entemaaltı" + value2.lesson_sub_cat_id + "'>" + "</div>"); // neden 2 değil daha fazla içerik ekliyor!!!!!
+      // $("#temaaltı" + key).append("<tr class='collapse' id='entemaaltı" + value2.lesson_sub_cat_id + "'>" + "</tr>");
       $.each(value2.lessons, function (key3, value3) {
-        $("#entemaaltı" + value2.lesson_sub_cat_id).append(
-          "<tr class='altbaslik'><td>" +
+        $("#temaaltı" + key).append(
+          "<tr class='altbaslik collapse' id='entemaaltı" +
+            value2.lesson_sub_cat_id +
+            "'><td>" +
             value3.lesson_title +
             "</td>" +
             "<td>" +
@@ -116,6 +126,7 @@ function allTables(data) {
             "</td></tr>"
         );
       });
+      $("#temaaltı" + key).append("</tbody>");
     });
   });
 }
