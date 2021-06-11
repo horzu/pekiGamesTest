@@ -20,43 +20,43 @@ $(function () {
 function allTables(data) {
   var arr = data.content;
   $.each(arr, function (key, value) {
-    $("#container").append("<div class='anatema container' id='tema" + key + "'>" + "</div>");
+    $("#container").append("<div class='anatema' id='tema" + key + "'>" + "</div>");
     $("#tema" + key).append(
-      "<tr id='tema'>" +
-        "<td>" +
+      "<tr class='d-flex justify-content-between align-items-center temabaslik' id='tema'>" +
+        "<td class='konu border-end'>" +
         "Tema:" +
         value.lesson_cat_id +
         "<br />" +
         value.lesson_cat_title +
         "</td>" +
-        "<td>" +
+        "<td class='tarih border-end'>" +
         value.lesson_start_date +
         "</td>" +
-        "<td>" +
+        "<td class='toplam border-end'>" +
         "Toplam <br />" +
         "N/A" +
         "</td>" +
-        "<td>" +
+        "<td class='çözülen border-end'>" +
         "Çözülen <br />" +
         value.lesson_solved +
         "</td>" +
-        "<td>" +
+        "<td class='doğru border-end'>" +
         "Doğru <br />" +
         value.lesson_correct +
         "</td>" +
-        "<td>" +
+        "<td class='yanlış border-end'>" +
         "Yanlış <br />" +
         value.lesson_wrong +
         "</td>" +
-        "<td>" +
-        "<div>Başarı Oranı " +
+        "<td class='oranlar border-end'>" +
+        "<div class='başarı border-bottom'>Başarı Oranı " +
         value.lesson_success +
         "%</div>" +
-        "<div>Kazanım " +
+        "<div class='kazanım border-end'>Kazanım " +
         value.lesson_earnings +
         "%</div>" +
         "</td>" +
-        "<td>" +
+        "<td class='butonartı'>" +
         '<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#temaaltı' +
         key +
         '" aria-expanded="false" aria-controls="temaaltı0"></button>' +
@@ -66,7 +66,7 @@ function allTables(data) {
     $("#tema" + key).append("<table class='collapse table table-bordered align-middle table-responsive' id='temaaltı" + key + "'>" + "</table>");
     $("#temaaltı" + key).append(
       '<thead><tr class="theader">' +
-        "<td>Konu</td>" +
+        "<td class='tdkonu'>Konu</td>" +
         "<td>Toplam</td>" +
         "<td>Doğru</td>" +
         "<td>Yanlış</td>" +

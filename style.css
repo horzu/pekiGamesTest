@@ -4,18 +4,59 @@ body {
 
 .anatema {
   background-color: white;
-
-  border: 1px solid black;
-  border-radius: 1%;
+  border-radius: 4%;
   margin-bottom: 10px;
 }
 
-.anatema {
+.tbody {
   border-left: transparent;
   border-top: transparent;
-  border-bottom: transparent;
+  border-right: transparent;
 }
 
 .theader {
   background-color: royalblue !important;
+}
+
+.temabaslik {
+  height: 60px;
+}
+
+.temabaslik td {
+  height: 100%;
+}
+.konu {
+  width: 20%;
+}
+
+.tarih {
+  width: 10%;
+}
+
+.toplam {
+  width: 10%;
+}
+
+.çözülen {
+  width: 10%;
+}
+
+.doğru {
+  width: 10%;
+}
+
+.yanlış {
+  width: 10%;
+}
+
+.oranlar {
+  width: 20%;
+}
+
+.butonartı {
+  width: 10%;
+}
+
+.tdkonu {
+  width: 50%;
 }
