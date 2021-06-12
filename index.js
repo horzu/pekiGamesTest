@@ -23,38 +23,38 @@ function allTables(data) {
     $("#container").append("<div class='anatema' id='tema" + key + "'>" + "</div>");
     $("#tema" + key).append(
       "<table class='temabaslik align-middle container-fluid'>" +
-        "<td class='konu ps-4 border-end'>" +
+        "<td class='konu ps-4'>" +
         "Tema:" +
         value.lesson_cat_id +
         "<br />" +
         value.lesson_cat_title +
         "</td>" +
-        "<td class='tarih text-center border-end'>" +
+        "<td class='tarih text-center'>" +
         value.lesson_start_date +
         "</td>" +
-        "<td class='toplam text-center border-end'>" +
+        "<td class='toplam text-center'>" +
         "Toplam <br />" +
         "<span class='bold'>N/A</span>" +
         "</td>" +
-        "<td class='çözülen text-center border-end'>" +
+        "<td class='çözülen text-center'>" +
         "Çözülen <br />" +
         "<span class='bold'>" +
         value.lesson_solved +
         "</span>" +
         "</td>" +
-        "<td class='doğru text-center border-end'>" +
+        "<td class='doğru text-center'>" +
         "Doğru <br />" +
         "<span class='bold'>" +
         value.lesson_correct +
         "</span>" +
         "</td>" +
-        "<td class='yanlış text-center border-end'>" +
+        "<td class='yanlış text-center'>" +
         "Yanlış <br />" +
         "<span class='bold'>" +
         value.lesson_wrong +
         "</span>" +
         "</td>" +
-        "<td class='oranlar text-center border-end'>" +
+        "<td class='oranlar text-center'>" +
         "<div class='başarı border-bottom'>Başarı Oranı " +
         value.lesson_success +
         "%</div>" +
@@ -85,11 +85,11 @@ function allTables(data) {
       $("#temaaltı" + key).append(
         "<tr class='baslik'>" +
           "<th>" +
-          '<button class="btn plus-button" type="button" data-bs-toggle="collapse" data-bs-target="#entemaaltı' +
+          '<button class="btn plus-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#entemaaltı' +
           value2.lesson_sub_cat_id +
           '" aria-expanded="false" aria-controls="entemaaltı' +
           value2.lesson_sub_cat_id +
-          '">+</button>' +
+          '"></button>' +
           value2.lesson_cat_title +
           "</th>" +
           "<td>" +
