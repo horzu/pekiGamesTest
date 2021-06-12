@@ -1,25 +1,25 @@
+* {
+  font-size: 0.9rem !important;
+}
+
 body {
   background-color: whitesmoke;
+  min-width: 540px;
 }
 
 .anatema {
   background-color: white;
-  border-radius: 4%;
+  border-radius: 1rem;
   margin-bottom: 10px;
 }
 
-.tbody {
-  border-left: transparent;
-  border-top: transparent;
-  border-right: transparent;
-}
-
 .theader {
-  background-color: royalblue !important;
+  background-color: #e5e9fa;
+  font-weight: 700;
 }
 
 .temabaslik {
-  height: 60px;
+  height: 70px;
 }
 
 .temabaslik td {
@@ -27,6 +27,8 @@ body {
 }
 .konu {
   width: 20%;
+  color: #9696bb;
+  font-weight: 600;
 }
 
 .tarih {
@@ -35,28 +37,124 @@ body {
 
 .toplam {
   width: 10%;
+  color: #9696bb;
 }
 
 .çözülen {
   width: 10%;
+  color: #9696bb;
 }
 
 .doğru {
   width: 10%;
+  color: #9696bb;
 }
 
 .yanlış {
   width: 10%;
+  color: #9696bb;
 }
 
 .oranlar {
   width: 20%;
+  font-weight: 600;
 }
 
 .butonartı {
   width: 10%;
+  padding: 0 auto;
+}
+
+.tdwidth {
+  width: 10%;
+}
+
+.butonartı button {
+  width: 4rem;
+  margin: 0 auto;
 }
 
 .tdkonu {
   width: 50%;
+  text-align: start !important;
+}
+
+.enaltbaslik {
+  text-align: start;
+  padding-left: 5%;
+}
+
+.plus-button {
+  width: 20px;
+  border-radius: unset;
+  padding: 0;
+  background-color: #5e81f4;
+  color: white;
+  margin: 0 10px;
+}
+
+.plus-button:hover {
+  background-color: white;
+  color: #5e81f4;
+  border-color: #5e81f4;
+}
+
+.plus-button:focus {
+  box-shadow: none;
+}
+
+.bold {
+  font-weight: 700;
+  font-size: 0.95rem !important;
+}
+
+.baslik {
+  font-weight: 700;
+}
+
+.baslik th {
+  text-align: start;
+}
+
+tbody {
+  align-content: center;
+  text-align: center;
+  border: transparent;
+}
+
+td,
+tr {
+  border-color: rgb(250, 250, 250);
+  border-width: 1px;
+}
+
+.accordion-button {
+  border-radius: 10px;
+  padding: 1rem 1rem;
+  background-color: #5e81f4 !important;
+  border: 1px solid #5e81f4;
+}
+
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  border-color: #5e81f4;
+  margin: auto;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230c63e4'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-button:hover {
+  background: white !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230c63e4'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  border: 1px solid #5e81f4;
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  padding: auto;
+  transition: transform 0.2s ease-in-out;
 }

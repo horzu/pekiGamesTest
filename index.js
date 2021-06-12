@@ -22,53 +22,59 @@ function allTables(data) {
   $.each(arr, function (key, value) {
     $("#container").append("<div class='anatema' id='tema" + key + "'>" + "</div>");
     $("#tema" + key).append(
-      "<tr class='d-flex justify-content-between align-items-center temabaslik' id='tema'>" +
-        "<td class='konu border-end'>" +
+      "<table class='temabaslik align-middle container-fluid'>" +
+        "<td class='konu ps-4 border-end'>" +
         "Tema:" +
         value.lesson_cat_id +
         "<br />" +
         value.lesson_cat_title +
         "</td>" +
-        "<td class='tarih border-end'>" +
+        "<td class='tarih text-center border-end'>" +
         value.lesson_start_date +
         "</td>" +
-        "<td class='toplam border-end'>" +
+        "<td class='toplam text-center border-end'>" +
         "Toplam <br />" +
-        "N/A" +
+        "<span class='bold'>N/A</span>" +
         "</td>" +
-        "<td class='çözülen border-end'>" +
+        "<td class='çözülen text-center border-end'>" +
         "Çözülen <br />" +
+        "<span class='bold'>" +
         value.lesson_solved +
+        "</span>" +
         "</td>" +
-        "<td class='doğru border-end'>" +
+        "<td class='doğru text-center border-end'>" +
         "Doğru <br />" +
+        "<span class='bold'>" +
         value.lesson_correct +
+        "</span>" +
         "</td>" +
-        "<td class='yanlış border-end'>" +
+        "<td class='yanlış text-center border-end'>" +
         "Yanlış <br />" +
+        "<span class='bold'>" +
         value.lesson_wrong +
+        "</span>" +
         "</td>" +
-        "<td class='oranlar border-end'>" +
+        "<td class='oranlar text-center border-end'>" +
         "<div class='başarı border-bottom'>Başarı Oranı " +
         value.lesson_success +
         "%</div>" +
-        "<div class='kazanım border-end'>Kazanım " +
+        "<div class='kazanım'>Kazanım " +
         value.lesson_earnings +
         "%</div>" +
         "</td>" +
-        "<td class='butonartı'>" +
-        '<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#temaaltı' +
+        "<td class='butonartı text-center'>" +
+        '<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#temaaltı' +
         key +
         '" aria-expanded="false" aria-controls="temaaltı0"></button>' +
         "</td>" +
-        "</tr>"
+        "</table>"
     );
-    $("#tema" + key).append("<table class='collapse table table-bordered align-middle table-responsive' id='temaaltı" + key + "'>" + "</table>");
+    $("#tema" + key).append("<table class='collapse table table-hover table-bordered align-middle' id='temaaltı" + key + "'>" + "</table>");
     $("#temaaltı" + key).append(
-      '<thead><tr class="theader">' +
-        "<td class='tdkonu'>Konu</td>" +
-        "<td>Toplam</td>" +
-        "<td>Doğru</td>" +
+      '<thead><tr class="theader text-center">' +
+        "<td class='tdkonu ps-5'>Konu</td>" +
+        "<td class='tdwidth'>Toplam</td>" +
+        "<td class='tdwidth'>Doğru</td>" +
         "<td>Yanlış</td>" +
         "<td>Başarı</td>" +
         "<td>Kazanım</td>" +
@@ -79,15 +85,16 @@ function allTables(data) {
       $("#temaaltı" + key).append(
         "<tr class='baslik'>" +
           "<th>" +
-          '<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#entemaaltı' +
+          '<button class="btn plus-button" type="button" data-bs-toggle="collapse" data-bs-target="#entemaaltı' +
           value2.lesson_sub_cat_id +
           '" aria-expanded="false" aria-controls="entemaaltı' +
           value2.lesson_sub_cat_id +
           '">+</button>' +
           value2.lesson_cat_title +
-          "<th>" +
-          "N/A" +
           "</th>" +
+          "<td>" +
+          "N/A" +
+          "</td>" +
           "<td>" +
           value2.lesson_correct +
           "</td>" +
@@ -96,17 +103,17 @@ function allTables(data) {
           "</td>" +
           "<td>" +
           value2.lesson_success +
-          "</td>" +
+          "%</td>" +
           "<td>" +
           value2.lesson_earnings +
-          "</td></tr>"
+          "%</td></tr>"
       );
       // $("#temaaltı" + key).append("<tr class='collapse' id='entemaaltı" + value2.lesson_sub_cat_id + "'>" + "</tr>");
       $.each(value2.lessons, function (key3, value3) {
         $("#temaaltı" + key).append(
           "<tr class='altbaslik collapse' id='entemaaltı" +
             value2.lesson_sub_cat_id +
-            "'><td>" +
+            "'><td class='enaltbaslik ps-5'>" +
             value3.lesson_title +
             "</td>" +
             "<td>" +
@@ -118,12 +125,12 @@ function allTables(data) {
             "<td>" +
             value3.lesson_wrong +
             "</td>" +
-            "<td>" +
+            "<td class='bold'>" +
             value3.lesson_success +
-            "</td>" +
-            "<td>" +
+            "%</td>" +
+            "<td class='bold'>" +
             value3.lesson_earnings +
-            "</td></tr>"
+            "%</td></tr>"
         );
       });
       $("#temaaltı" + key).append("</tbody>");
