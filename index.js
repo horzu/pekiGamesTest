@@ -10,13 +10,6 @@ $(function () {
   });
 });
 
-// function innerTables(data) {
-//   var arr = data.content[0].lesson_sub[0].lessons;
-//   $.each(arr, function (key, value) {
-//     $("#container").append("<p>" + value.lesson_title + "</p>");
-//   });
-// }
-
 function allTables(data) {
   var arr = data.content;
   $.each(arr, function (key, value) {
